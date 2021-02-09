@@ -1,5 +1,8 @@
+import os
 from imagefolder import ImageFolder
 
+if not os.path.exists('images_dataset_tar'):
+    os.makedirs('images_dataset_tar')
 
 im = ImageFolder([
     './images_dataset_ds/train/011k07',
