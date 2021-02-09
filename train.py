@@ -110,6 +110,8 @@ def get_transform_api():
 
 def prepare_datapipe(data_dir):
     from torch.utils.data import IterDataPipe
+    # a temp class to do mimic the current dataset behavior
+    # so dataloader can use the datapipe directly.
     class TransferDatapipe(IterDataPipe):
         def __init__(self, datapipe, phase, length = -1):
             super().__init__()
